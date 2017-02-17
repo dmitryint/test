@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+hooks:
+  BeforeInstall:
+    - location: /opt/app/pull.sh
+      timeout: 200
+  AfterInstall:
+    - location: /opt/app/stop.sh
+      timeout: 200
+  ApplicationStart:
+    - location: /opt/app/start.sh
+      timeout: 3600
